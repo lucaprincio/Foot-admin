@@ -1,10 +1,12 @@
 import { useState } from "react";
 import MatchsTable from "./components/matchs/MatchsTable";
 import FlashNewsList from "./components/flashnews/FlashNewsList";
+import ArticlesTable from "./components/articles/ArticlesTable";
 
 const PAGES = [
-  { id: "matchs", label: "Matchs", composant: MatchsTable },
-  { id: "flashnews", label: "Flash news", composant: FlashNewsList },
+  { id: "matchs", label: "⚽ Matchs", composant: MatchsTable },
+  { id: "flashnews", label: "⚡ Flash news", composant: FlashNewsList },
+  { id: "articles", label: "📝 Articles", composant: ArticlesTable },
 ];
 
 export default function App() {
@@ -14,9 +16,9 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-50 flex">
       {/* Sidebar */}
-      <aside className="w-48 bg-white border-r border-gray-100 flex flex-col p-4 gap-1">
+      <aside className="w-48 bg-white border-r border-gray-100 flex flex-col p-4 gap-1 flex-shrink-0">
         <div className="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
-          <span className="w-6 h-6 bg-green-600 rounded-md flex items-center justify-center text-white text-xs">
+          <span className="w-7 h-7 bg-green-600 rounded-md flex items-center justify-center text-white text-sm">
             ⚽
           </span>
           FootAdmin
@@ -36,7 +38,7 @@ export default function App() {
         ))}
       </aside>
 
-      {/* Contenu */}
+      {/* Contenu principal */}
       <main className="flex-1 overflow-auto">
         <Page />
       </main>
